@@ -7,6 +7,10 @@ next, go to Project>Project Settings>Plugins and enable PersianGenerator<br>
 Finish!<br>
 
 # How to use ?
-## aa
+## Basic
 type your text in input field and click copy or set setting to "copy on generate" (in plugin GUI , not in project settings!!!)
-
+## Disable "to persian number mode"
+open settings and disable "Fix Numbers" and click ok. (if not click to Ok , changes not saved)
+## Change plugin Location
+open settinfs and enable/disable in bottom panel<br>
+next reload engine.
