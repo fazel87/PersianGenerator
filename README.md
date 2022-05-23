@@ -7,4 +7,6 @@ next, go to Project>Project Settings>Plugins and enable PersianGenerator<br>
 Finish!<br>
 
 # How to use ?
-type your text in input field and click Generate button and copy it.<br>
+## aa
+type your text in input field and click copy or set setting to "copy on generate" (in plugin GUI , not in project settings!!!)
+
