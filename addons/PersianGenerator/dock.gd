@@ -22,3 +22,8 @@ func _on_Settings_pressed():
 
 func copy(text:String):
 	OS.clipboard = text
+
+
+func _on_Clean_pressed():
+	input.text = ""
+	output.text = ""
