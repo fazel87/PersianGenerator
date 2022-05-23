@@ -1,0 +1,150 @@
+[gd_scene load_steps=3 format=2]
+
+[ext_resource path="res://addons/PersianGenerator/dock.gd" type="Script" id=1]
+[ext_resource path="res://addons/PersianGenerator/Settings.gd" type="Script" id=2]
+
+[node name="Persian" type="Control"]
+anchor_right = 1.0
+anchor_bottom = 1.0
+size_flags_horizontal = 3
+size_flags_vertical = 3
+script = ExtResource( 1 )
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="VBoxContainer" type="VBoxContainer" parent="."]
+anchor_right = 1.0
+anchor_bottom = 1.0
+size_flags_horizontal = 3
+size_flags_vertical = 3
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="HBoxContainer" type="HBoxContainer" parent="VBoxContainer"]
+margin_right = 1920.0
+margin_bottom = 171.0
+size_flags_horizontal = 3
+size_flags_vertical = 3
+size_flags_stretch_ratio = 0.38
+
+[node name="MainTitle" type="Label" parent="VBoxContainer/HBoxContainer"]
+margin_right = 958.0
+margin_bottom = 171.0
+size_flags_horizontal = 3
+size_flags_vertical = 3
+size_flags_stretch_ratio = 0.38
+text = "Persian"
+
+[node name="Settings" type="Button" parent="VBoxContainer/HBoxContainer"]
+margin_left = 962.0
+margin_right = 1920.0
+margin_bottom = 171.0
+size_flags_horizontal = 3
+size_flags_vertical = 3
+size_flags_stretch_ratio = 0.38
+text = "Settings"
+
+[node name="HBoxContainer2" type="HBoxContainer" parent="VBoxContainer"]
+margin_top = 175.0
+margin_right = 1920.0
+margin_bottom = 625.0
+size_flags_horizontal = 3
+size_flags_vertical = 3
+
+[node name="Input" type="TextEdit" parent="VBoxContainer/HBoxContainer2"]
+margin_right = 958.0
+margin_bottom = 450.0
+size_flags_horizontal = 3
+size_flags_vertical = 3
+
+[node name="Generate" type="Button" parent="VBoxContainer/HBoxContainer2"]
+margin_left = 962.0
+margin_right = 1920.0
+margin_bottom = 450.0
+size_flags_horizontal = 3
+size_flags_vertical = 3
+text = "Generate"
+
+[node name="HBoxContainer3" type="HBoxContainer" parent="VBoxContainer"]
+margin_top = 629.0
+margin_right = 1920.0
+margin_bottom = 1080.0
+size_flags_horizontal = 3
+size_flags_vertical = 3
+
+[node name="Output" type="TextEdit" parent="VBoxContainer/HBoxContainer3"]
+margin_right = 958.0
+margin_bottom = 451.0
+size_flags_horizontal = 3
+size_flags_vertical = 3
+
+[node name="Copy" type="Button" parent="VBoxContainer/HBoxContainer3"]
+margin_left = 962.0
+margin_right = 1920.0
+margin_bottom = 451.0
+size_flags_horizontal = 3
+size_flags_vertical = 3
+text = "Copy"
+
+[node name="Settings" type="AcceptDialog" parent="."]
+visible = true
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+margin_left = -77.0
+margin_top = -62.0
+margin_right = 77.0
+margin_bottom = 62.0
+window_title = "Settings"
+resizable = true
+script = ExtResource( 2 )
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="VBoxContainer" type="VBoxContainer" parent="Settings"]
+anchor_right = 1.0
+anchor_bottom = 1.0
+margin_left = 8.0
+margin_top = 8.0
+margin_right = -8.0
+margin_bottom = -36.0
+size_flags_horizontal = 15
+size_flags_vertical = 15
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="CopyOnGen" type="CheckBox" parent="Settings/VBoxContainer"]
+margin_right = 138.0
+margin_bottom = 24.0
+size_flags_horizontal = 3
+size_flags_vertical = 3
+pressed = true
+text = "copy on generate"
+
+[node name="InBtmPnl" type="CheckBox" parent="Settings/VBoxContainer"]
+margin_top = 28.0
+margin_right = 138.0
+margin_bottom = 52.0
+size_flags_horizontal = 3
+size_flags_vertical = 3
+pressed = true
+text = "in bottom panel"
+
+[node name="FixNums" type="CheckBox" parent="Settings/VBoxContainer"]
+margin_top = 56.0
+margin_right = 138.0
+margin_bottom = 80.0
+size_flags_horizontal = 3
+size_flags_vertical = 3
+pressed = true
+text = "Fix Numbers"
+
+[connection signal="pressed" from="VBoxContainer/HBoxContainer/Settings" to="." method="_on_Settings_pressed"]
+[connection signal="pressed" from="VBoxContainer/HBoxContainer2/Generate" to="." method="_on_Generate_pressed"]
+[connection signal="pressed" from="VBoxContainer/HBoxContainer3/Copy" to="." method="_on_Copy_pressed"]
+[connection signal="confirmed" from="Settings" to="Settings" method="_on_Settings_confirmed"]
